@@ -11,6 +11,7 @@ import Register from './pages/Register';
 import Products from './pages/Products';
 import DashboardApp from './pages/DashboardApp';
 import ProfessionalTemplate from './pages/ProfessionalTemplate';
+import MinimalTemplate from './pages/MinimalTemplate';
 
 // ----------------------------------------------------------------------
 
@@ -22,6 +23,7 @@ export default function Router() {
       children: [
         { path: 'app', element: <DashboardApp /> },
         { path: 'professional-template', element: <ProfessionalTemplate /> },
+        {path : 'minimal-template', element : <MinimalTemplate/>},
         { path: 'user', element: <User /> },
         { path: 'products', element: <Products /> },
         { path: 'blog', element: <Blog /> },

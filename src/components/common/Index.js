@@ -1,0 +1,9 @@
+export { default as ProfileAvatar } from './ProfileAvatar';
+export { default as Education } from './Education';
+export { default as Experience } from './Experience';
+export { default as Interest } from './InterestXHobbies';
+export { default as Languages } from './Languages';
+export { default as Projects } from './ProjectsXAward';
+export { default as Awards } from './ProjectsXAward';
+export { default as Skills } from './Skills';
+export { default as Certifications } from './Certifications';

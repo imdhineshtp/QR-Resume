@@ -33,7 +33,7 @@ export default function DashboardApp() {
     {
       tempName: ' Minimalistic Template',
       tempCover: '/static/mock-images/products/product_3.jpg',
-      link: '',
+      link: '/dashboard/minimal-template',
     },
   ];
   return (
@@ -42,7 +42,6 @@ export default function DashboardApp() {
         <Typography variant='h4' sx={{ mb: 5 }}>
           Welcome Dhinesh,
         </Typography>
-
         <Grid container spacing={3}>
           {template.map((temp, idx) => (
             <Grid
