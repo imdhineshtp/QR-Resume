@@ -18,26 +18,45 @@ import {
   AppCurrentSubject,
   AppConversionRates,
 } from '../sections/@dashboard/app';
+import { Link as RouterLink } from 'react-router-dom';
 
 // ----------------------------------------------------------------------
 
 export default function DashboardApp() {
   const theme = useTheme();
-
+  const template = [
+    {
+      tempName: 'Professional Template',
+      tempCover: '/static/mock-images/products/product_1.jpg',
+      link: '/dashboard/professional-template',
+    },
+    {
+      tempName: ' Minimalistic Template',
+      tempCover: '/static/mock-images/products/product_3.jpg',
+      link: '',
+    },
+  ];
   return (
-    <Page title="Dashboard">
-      <Container maxWidth="xl">
-        <Typography variant="h4" sx={{ mb: 5 }}>
+    <Page title='Dashboard'>
+      <Container maxWidth='xl'>
+        <Typography variant='h4' sx={{ mb: 5 }}>
           Welcome Dhinesh,
         </Typography>
 
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={6} md={5}>
-            <TemplateCard />
-          </Grid>
-          <Grid item xs={12} sm={6} md={5}>
-            <TemplateCard />
-          </Grid>
+          {template.map((temp, idx) => (
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              lg={5}
+              key={idx}
+              component={RouterLink}
+              to={temp.link}
+            >
+              <TemplateCard templateDetail={temp} />
+            </Grid>
+          ))}
         </Grid>
       </Container>
     </Page>
