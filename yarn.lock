@@ -7637,7 +7637,7 @@
     "react-fast-compare" "^3.2.0"
     "shallowequal" "^1.1.0"
 
-"react-hook-form@^7.0.0":
+"react-hook-form@^7.0.0", "react-hook-form@^7.32.0":
   "integrity" "sha512-AFUwl9MwVVnZZsFZW7Egc8PVyWem6c6/9FBq29Acsikm+8ecJCkqOn2Tl48GApFnXBgoBBEHC3zosjYvPfsGNg=="
   "resolved" "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.32.0.tgz"
   "version" "7.32.0"
