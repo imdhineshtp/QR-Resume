@@ -12,7 +12,7 @@ import Products from './pages/Products';
 import DashboardApp from './pages/DashboardApp';
 import ProfessionalTemplate from './pages/ProfessionalTemplate';
 import MinimalTemplate from './pages/MinimalTemplate';
-
+import ViewResume from './pages/ViewResume';
 // ----------------------------------------------------------------------
 
 export default function Router() {
@@ -22,8 +22,7 @@ export default function Router() {
       element: <DashboardLayout />,
       children: [
         { path: 'app', element: <DashboardApp /> },
-        { path: 'professional-template', element: <ProfessionalTemplate /> },
-        {path : 'minimal-template', element : <MinimalTemplate/>},
+        { path: 'view-resume/:template_name', element: <ViewResume /> },
         { path: 'user', element: <User /> },
         { path: 'products', element: <Products /> },
         { path: 'blog', element: <Blog /> },
@@ -33,13 +32,13 @@ export default function Router() {
       path: '/',
       element: <LogoOnlyLayout />,
       children: [
-        { path: '/', element: <Navigate to="/dashboard/app" /> },
+        { path: '/', element: <Navigate to='/dashboard/app' /> },
         { path: 'login', element: <Login /> },
         { path: 'register', element: <Register /> },
         { path: '404', element: <NotFound /> },
-        { path: '*', element: <Navigate to="/404" /> },
+        { path: '*', element: <Navigate to='/404' /> },
       ],
     },
-    { path: '*', element: <Navigate to="/404" replace /> },
+    { path: '*', element: <Navigate to='/404' replace /> },
   ]);
 }

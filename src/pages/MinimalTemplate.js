@@ -135,7 +135,7 @@ export default function MinimalTemplate() {
           />
           <IntroSection />
         </Grid>
-        <Grid container xs={12}>
+        <Grid container xs={12} spacing={2}>
           <Grid item xs={3}>
             <SmSection />
             <Skills

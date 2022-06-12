@@ -28,34 +28,40 @@ export default function DashboardApp() {
     {
       tempName: 'Professional Template',
       tempCover: '/static/mock-images/products/product_1.jpg',
-      link: '/dashboard/professional-template',
+      link: '/dashboard/view-resume/professional-resume',
     },
     {
       tempName: ' Minimalistic Template',
       tempCover: '/static/mock-images/products/product_3.jpg',
-      link: '/dashboard/minimal-template',
+      link: '/dashboard/view-resume/minimal-resume',
     },
   ];
+
   return (
     <Page title='Dashboard'>
       <Container maxWidth='xl'>
         <Typography variant='h4' sx={{ mb: 5 }}>
           Welcome Dhinesh,
         </Typography>
-        <Grid container spacing={3}>
-          {template.map((temp, idx) => (
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              lg={5}
-              key={idx}
-              component={RouterLink}
-              to={temp.link}
-            >
-              <TemplateCard templateDetail={temp} />
-            </Grid>
-          ))}
+        <Grid item xs={12} sx={{ mb: 2 }}>
+          <Typography variant='h5' sx={{ mb: 2 }}>
+            Resume Templates
+          </Typography>
+          <Grid container spacing={3}>
+            {template.map((temp, idx) => (
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                lg={5}
+                key={idx}
+                component={RouterLink}
+                to={temp.link}
+              >
+                <TemplateCard templateDetail={temp} template={true} />
+              </Grid>
+            ))}
+          </Grid>
         </Grid>
       </Container>
     </Page>

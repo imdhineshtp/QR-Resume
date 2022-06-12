@@ -5,7 +5,9 @@ import {
   Box,
   Avatar,
   Divider,
+  IconButton,
 } from '@mui/material';
+import { Mode } from '@mui/icons-material';
 import { ProfileAvatar } from '../common/Index';
 export default function IntroSection() {
   const theme = useTheme();
@@ -17,6 +19,7 @@ export default function IntroSection() {
         py: 3,
         backgroundColor: '#223f5b',
         px: 4,
+        position: 'relative',
         // justifyContent: 'flex-end',
       }}
     >
@@ -45,6 +48,9 @@ export default function IntroSection() {
           Mollitia, harum? Voluptatibus numquam harum dolor unde,
         </Typography>
       </Grid>
+      <IconButton sx={{ position: 'absolute', top: 20, right: 20 }}>
+        <Mode sx={{ color: '#fff' }} />
+      </IconButton>
     </Grid>
   );
 }

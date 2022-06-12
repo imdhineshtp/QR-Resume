@@ -6,11 +6,16 @@ import {
   ListItemText,
   Stack,
   Chip,
+  IconButton,
 } from '@mui/material';
+import { Mode, Delete, Add } from '@mui/icons-material';
+import { useState } from 'react';
+import EditEducation from '../PopupForms/EditEducations';
 
 export default function Education({ education, color }) {
+  const [open, setOpen] = useState(false);
   return (
-    <Grid item xs={12} sx={{ mt: 2 }}>
+    <Grid item xs={12} sx={{ mt: 2, position: 'relative' }}>
       <Typography
         variant='h4'
         color={color}
@@ -20,7 +25,7 @@ export default function Education({ education, color }) {
       </Typography>
 
       {education.map((field) => (
-        <Grid item xs={12} sx={{ my: 2 }}>
+        <Grid item xs={12} sx={{ my: 2, position: 'relative' }}>
           <Typography variant='h5'>{field.courseName}</Typography>
           <Typography variant='body1'>{field.university}</Typography>
           <Stack direction='row' justifyContent='space-between'>
@@ -34,12 +39,42 @@ export default function Education({ education, color }) {
           <Typography variant='body2' sx={{ color: color }}>
             CGPA / Percentage : {field.cgpa}
           </Typography>
+          <Stack
+            direction='row'
+            sx={{
+              position: 'absolute',
+              top: 0,
+              right: 0,
+              justifyContent: 'flex-end',
+            }}
+          >
+            <IconButton>
+              <Mode sx={{ fontSize: '0.8em' }} />
+            </IconButton>
+            <IconButton>
+              <Delete sx={{ fontSize: '0.8em' }} />
+            </IconButton>
+          </Stack>
         </Grid>
       ))}
 
-      {/* <Typography variant="h6" color="text.primary">
-          Bsc in Computer Science
-        </Typography> */}
+      <Stack
+        direction='row'
+        sx={{ position: 'absolute', top: 0, right: 0 }}
+        justifyContent={'flex-end'}
+      >
+        <IconButton onClick={open}>
+          <Add sx={{ fontSize: '1em' }} />
+        </IconButton>
+      </Stack>
+
+      {open && (
+        <EditEducation
+          open={open}
+          onClose={() => setOpen(false)}
+          cardTitle={'Education'}
+        />
+      )}
     </Grid>
   );
 }

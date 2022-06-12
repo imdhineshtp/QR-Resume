@@ -11,15 +11,10 @@ import {
 export default function ProfessionalTemplate() {
   const theme = useTheme();
   return (
-    <Page
-      title='Professional Template'
-      sx={{ display: 'flex', justifyContent: 'center' }}
-    >
-      <Grid item maxWidth='lg'>
-        <IntroSection />
-        <SmSection />
-        <TemplateBody />
-      </Grid>
-    </Page>
+    <Grid item maxWidth='lg'>
+      <IntroSection />
+      <SmSection />
+      <TemplateBody />
+    </Grid>
   );
 }

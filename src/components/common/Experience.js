@@ -6,11 +6,13 @@ import {
   ListItemText,
   Stack,
   Chip,
+  IconButton
 } from '@mui/material';
+import { Mode, Delete, Add } from '@mui/icons-material';
 
 export default function Experience({ title, experience, color }) {
   return (
-    <Grid item xs={12}>
+    <Grid item xs={12} sx={{ position: 'relative' }}>
       <Typography
         variant='h4'
         color={color}
@@ -19,7 +21,7 @@ export default function Experience({ title, experience, color }) {
         {title}
       </Typography>
       {experience.map((field) => (
-        <Grid item xs={12} sx={{ mt: 2, mb: 3 }}>
+        <Grid item xs={12} sx={{ mt: 2, mb: 3, position: 'relative' }}>
           <Typography variant='h5'>{field.roleName}</Typography>
           <Typography variant='h6' sx={{ fontWeight: 400 }}>
             {field.companyName}
@@ -63,8 +65,33 @@ export default function Experience({ title, experience, color }) {
               ))}
             </ul>
           </div>
+          <Stack
+            direction='row'
+            sx={{
+              position: 'absolute',
+              top: 0,
+              right: 0,
+              justifyContent: 'flex-end',
+            }}
+          >
+            <IconButton>
+              <Mode sx={{ fontSize: '0.8em' }} />
+            </IconButton>
+            <IconButton>
+              <Delete sx={{ fontSize: '0.8em' }} />
+            </IconButton>
+          </Stack>
         </Grid>
       ))}
+      <Stack
+        direction='row'
+        sx={{ position: 'absolute', top: 0, right: 0 }}
+        justifyContent={'flex-end'}
+      >
+        <IconButton>
+          <Add sx={{ fontSize: '1em' }} />
+        </IconButton>
+      </Stack>
     </Grid>
   );
 }

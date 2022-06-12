@@ -6,6 +6,8 @@ import {
   ListItemText,
   ListItemIcon,
   useTheme,
+  Stack,
+  IconButton,
 } from '@mui/material';
 import {
   Instagram,
@@ -16,6 +18,7 @@ import {
   CalendarMonth,
   PhoneIphoneTwoTone,
   Link,
+  Mode,
 } from '@mui/icons-material';
 
 const SmAccounts = [
@@ -31,7 +34,7 @@ const SmAccounts = [
 export default function SmSection() {
   const theme = useTheme();
   return (
-    <Grid item container xs={2}>
+    <Grid item container xs={2} sx={{ position: 'relative' }}>
       <List>
         {SmAccounts.map((sma) => (
           <ListItem>
@@ -40,6 +43,15 @@ export default function SmSection() {
           </ListItem>
         ))}
       </List>
+      <Stack
+        direction='row'
+        sx={{ position: 'absolute', top: -30, left: 220,  }}
+        justifyContent={'flex-end'}
+      >
+        <IconButton>
+          <Mode sx={{ fontSize: '1em' }} />
+        </IconButton>
+      </Stack>
     </Grid>
   );
 }

@@ -6,11 +6,14 @@ import {
   ListItemText,
   Stack,
   Chip,
+  IconButton,
 } from '@mui/material';
-
+import { useParams } from 'react-router-dom';
+import { Mode, Add, Delete } from '@mui/icons-material';
 export default function Languages({ language, color }) {
+  const { template_name } = useParams();
   return (
-    <Grid item xs={12} sx={{ mb: 2 }}>
+    <Grid item xs={12} sx={{ mb: 2, position: 'relative' }}>
       <Typography
         variant='h4'
         color={color}
@@ -20,7 +23,11 @@ export default function Languages({ language, color }) {
       </Typography>
       <Grid container xs={12}>
         {language.map((lang) => (
-          <Grid item xs={6}>
+          <Grid
+            item
+            xs={template_name === 'minimal-resume' ? 12 : 6}
+            sx={{ position: 'relative' }}
+          >
             <ListItemText
               primary={lang.langName}
               secondary={
@@ -29,9 +36,34 @@ export default function Languages({ language, color }) {
                 </Typography>
               }
             />
+            <Stack
+              direction='row'
+              sx={{
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                justifyContent: 'flex-end',
+              }}
+            >
+              <IconButton>
+                <Mode sx={{ fontSize: '0.8em' }} />
+              </IconButton>
+              <IconButton>
+                <Delete sx={{ fontSize: '0.8em' }} />
+              </IconButton>
+            </Stack>
           </Grid>
         ))}
       </Grid>
+      <Stack
+        direction='row'
+        sx={{ position: 'absolute', top: 0, right: 0 }}
+        justifyContent={'flex-end'}
+      >
+        <IconButton>
+          <Add sx={{ fontSize: '1em' }} />
+        </IconButton>
+      </Stack>
     </Grid>
   );
 }
