@@ -21,6 +21,7 @@ import { DateTimePicker } from '@mui/lab';
 
 export default function EditEducation({ onClose, cardTitle, open }) {
   const theme = useTheme();
+  console.log('working here');
   const introScheme = Yup.object().shape({
     courseName: Yup.string().required('Course name is required'),
     universityName: Yup.string().required('University name is required'),
@@ -78,7 +79,7 @@ export default function EditEducation({ onClose, cardTitle, open }) {
               <TextField
                 {...field}
                 fullWidth
-                label='First Name'
+                label='Course Name'
                 error={errors.courseName ? true : false}
                 helperText={errors.courseName && errors.courseName.message}
               />
@@ -93,7 +94,7 @@ export default function EditEducation({ onClose, cardTitle, open }) {
               <TextField
                 {...field}
                 fullWidth
-                label='Last Name'
+                label='University Name'
                 error={errors.universityName ? true : false}
                 helperText={
                   errors.universityName && errors.universityName.message
@@ -126,6 +127,36 @@ export default function EditEducation({ onClose, cardTitle, open }) {
                 {...field}
                 fullWidth
                 label='End Date'
+                error={errors.doe ? true : false}
+                helperText={errors.doe && errors.doe.message}
+              />
+            )}
+            control={control}
+          />
+        </FormControl>
+        <FormControl required sx={{ width: '100%', mb: 2 }}>
+          <Controller
+            name='location'
+            render={({ field }) => (
+              <TextField
+                {...field}
+                fullWidth
+                label='Location'
+                error={errors.doe ? true : false}
+                helperText={errors.doe && errors.doe.message}
+              />
+            )}
+            control={control}
+          />
+        </FormControl>
+        <FormControl required sx={{ width: '100%', mb: 2 }}>
+          <Controller
+            name='percentage'
+            render={({ field }) => (
+              <TextField
+                {...field}
+                fullWidth
+                label='CGPA / Percentage'
                 error={errors.doe ? true : false}
                 helperText={errors.doe && errors.doe.message}
               />

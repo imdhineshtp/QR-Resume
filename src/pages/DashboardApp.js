@@ -27,12 +27,12 @@ export default function DashboardApp() {
   const template = [
     {
       tempName: 'Professional Template',
-      tempCover: '/static/mock-images/products/product_1.jpg',
+      tempCover: '/static/illustrations/professional.png',
       link: '/dashboard/view-resume/professional-resume',
     },
     {
       tempName: ' Minimalistic Template',
-      tempCover: '/static/mock-images/products/product_3.jpg',
+      tempCover: '/static/illustrations/minimals.png',
       link: '/dashboard/view-resume/minimal-resume',
     },
   ];

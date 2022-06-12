@@ -48,7 +48,7 @@ export default function Education({ education, color }) {
               justifyContent: 'flex-end',
             }}
           >
-            <IconButton>
+            <IconButton onClick={() => setOpen(true)}>
               <Mode sx={{ fontSize: '0.8em' }} />
             </IconButton>
             <IconButton>
@@ -63,7 +63,7 @@ export default function Education({ education, color }) {
         sx={{ position: 'absolute', top: 0, right: 0 }}
         justifyContent={'flex-end'}
       >
-        <IconButton onClick={open}>
+        <IconButton onClick={() => setOpen(true)}>
           <Add sx={{ fontSize: '1em' }} />
         </IconButton>
       </Stack>

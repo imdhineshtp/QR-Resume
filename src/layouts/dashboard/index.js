@@ -28,7 +28,6 @@ const MainStyle = styled('div')(({ theme }) => ({
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
   },
-  border: '2px solid black',
 }));
 
 // ----------------------------------------------------------------------
